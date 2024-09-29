@@ -2,29 +2,19 @@
 Sub multiple_year_stock_data()
 Dim ws As Worksheet
 For Each ws In Worksheets
-
-
 Dim x As Long
 Dim ticker As String
 Dim quartely_change As Double
 Dim total_stock_volume As Double
-
-
-
 Dim title_row As Integer
-
 Dim percentage_change As Double
 percentage_change = 0
-
-
-
 Dim coloumn As Integer
 Dim lastrow As Long
 title_row = 2
 lastrow = ws.Cells(Rows.Count, 1).End(xlUp).Row
 Dim quarterly_change_last_row As Long
-quarterly_change_last_row = ws.Cells(Rows.Count, 10).End(xlUp).Row
- 
+quarterly_change_last_row = ws.Cells(Rows.Count, 10).End(xlUp).Row 
 Dim last_percentage_change_row As Long
 Dim last_total_stock_row As Long
 last_percentage_change_row = ws.Cells(Rows.Count, 11).End(xlUp).Row
@@ -90,11 +80,6 @@ ws.Range("O3").Value = "Greatest % Decrease"
 End If
 Next x
 
-
-
-
-
-
 Dim greatest_stock_volume As Double
 greatest_stock_volume = Application.Max(ws.Range("L2:L" & last_total_stock_row))
 ws.Range("Q4") = greatest_stock_volume
@@ -121,10 +106,6 @@ ws.Cells(x, 11).Interior.ColorIndex = 2
 ws.Cells(x, 11).Font.ColorIndex = 1
 End If
 Next x
-
-
-
-
 
 Next ws
 
